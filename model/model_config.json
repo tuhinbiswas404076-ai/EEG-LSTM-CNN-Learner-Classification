@@ -1,0 +1,56 @@
+{
+  "project_name": "EEG-LSTM-CNN-Learner-Classification",
+  "version": "1.0.0",
+  "paper_reference": "Jawed, Faye & Malik - IEEE Transactions on Neural Systems and Rehabilitation Engineering, Vol. 32, 2024",
+  "dataset": "PhysioNet EEG Motor Movement/Imagery Database (EEGMMIDB)",
+  "classes": {
+    "0": {
+      "name": "Non-Visual Learner",
+      "baseline_state": "Eyes-Open Resting State (Run 01)",
+      "description": "EEG pattern characterized by suppressed alpha rhythm (8-13 Hz) and desynchronized occipital-parietal activation."
+    },
+    "1": {
+      "name": "Visual Learner",
+      "baseline_state": "Eyes-Closed Resting State (Run 02)",
+      "description": "EEG pattern characterized by pronounced synchronized alpha oscillations (8-13 Hz) in posterior regions indicating visual system idling."
+    }
+  },
+  "signal_parameters": {
+    "sampling_rate_hz": 160,
+    "num_channels": 64,
+    "segment_duration_seconds": 4,
+    "samples_per_segment": 640,
+    "input_shape": [640, 64],
+    "bandpass_low_hz": 1.0,
+    "bandpass_high_hz": 45.0,
+    "notch_freq_hz": 60.0,
+    "artifact_clip_microvolts": 500.0
+  },
+  "model_architecture": {
+    "name": "LSTM-CNN",
+    "framework": "TensorFlow / Keras 3",
+    "layers": [
+      {"type": "InputLayer", "shape": [null, 640, 64]},
+      {"type": "LSTM", "units": 64, "return_sequences": true},
+      {"type": "Dropout", "rate": 0.3},
+      {"type": "Conv1D", "filters": 64, "kernel_size": 3, "padding": "same", "activation": "relu"},
+      {"type": "MaxPooling1D", "pool_size": 2, "strides": 2},
+      {"type": "Conv1D", "filters": 32, "kernel_size": 3, "padding": "same", "activation": "relu"},
+      {"type": "GlobalAveragePooling1D"},
+      {"type": "Dense", "units": 64, "activation": "relu"},
+      {"type": "Dropout", "rate": 0.3},
+      {"type": "Dense", "units": 2, "activation": "softmax"}
+    ],
+    "total_parameters": 161384,
+    "trainable_parameters": 53794
+  },
+  "benchmark_metrics": {
+    "validation_accuracy": 0.8712,
+    "validation_balanced_accuracy": 0.8712,
+    "validation_auc": 0.9738,
+    "test_accuracy": 0.8045,
+    "test_auc": 0.9278,
+    "cross_validation_accuracy_mean": 0.829,
+    "cross_validation_accuracy_std": 0.040
+  }
+}

@@ -1,0 +1,34 @@
+# Raw and large dataset folders
+eegmmidb_data/
+*.edf
+
+# Python bytecode & environments
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+ENV/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+
+# IDE and OS files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Root level working notebooks and loose models
+/*.ipynb
+/*.keras
+/*.h5
+
+# Exceptions: keep deployment assets
+!model/*.keras
+!samples/*.npy
+!notebook/*.ipynb

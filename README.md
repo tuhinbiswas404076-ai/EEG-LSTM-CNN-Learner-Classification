@@ -1,6 +1,6 @@
 # 🧠 EEG Visual Learner Classification (LSTM-CNN)
 
-[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/)
+[![Deploy to Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?repository=tuhinbiswas404076-ai/EEG-LSTM-CNN-Learner-Classification&branch=main&mainModule=app.py)
 [![Python 3.10+](https://img.shields.io/badge/Python-3.10%2B-blue.svg?logo=python)](https://www.python.org/)
 [![TensorFlow 2.15+](https://img.shields.io/badge/TensorFlow-2.15%2B-orange.svg?logo=tensorflow)](https://tensorflow.org/)
 [![Keras 3](https://img.shields.io/badge/Keras-3.0%2B-red.svg?logo=keras)](https://keras.io/)
@@ -10,6 +10,16 @@
 
 > **Research Reference:**  
 > Jawed, Faye & Malik — *Deep Learning-Based Assessment Model for Visual Learner Identification using Raw EEG*, **IEEE Transactions on Neural Systems and Rehabilitation Engineering (TNSRE)**, Vol. 32, 2024.
+
+---
+
+## 🚀 1-Click Live Cloud Deployment
+
+Click the badge below to immediately deploy and launch this application on **Streamlit Community Cloud** with all configurations pre-filled:
+
+[![Deploy to Streamlit](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/deploy?repository=tuhinbiswas404076-ai/EEG-LSTM-CNN-Learner-Classification&branch=main&mainModule=app.py)
+
+👉 **[Direct 1-Click Deploy Link](https://share.streamlit.io/deploy?repository=tuhinbiswas404076-ai/EEG-LSTM-CNN-Learner-Classification&branch=main&mainModule=app.py)**
 
 ---
 
@@ -118,6 +128,9 @@ EEG-LSTM-CNN-Learner-Classification/
 ├── LICENSE                                 # MIT Open-Source License
 ├── .gitignore                              # Git exclusions (data, cache, checkpoints)
 │
+├── .streamlit/
+│   └── config.toml                         # Streamlit server and theme configurations
+│
 ├── assets/                                 # Research visual plots & figures
 │   ├── eeg_multichannel_waveforms.png      # Scalp montage traces
 │   ├── power_spectral_density.png          # Alpha band decomposition
@@ -183,20 +196,11 @@ Open `http://localhost:8501` in your browser.
 
 Deploy your application for free with a permanent public URL:
 
-### Step 1: Push Repository to GitHub
-```bash
-git add .
-git commit -m "feat: add research plot figures and visual benchmark documentation"
-git push origin main
-```
-
-### Step 2: Connect Streamlit Community Cloud
-1. Visit [share.streamlit.io](https://share.streamlit.io/) and log in with your GitHub account.
-2. Click **"New app"**.
-3. Select your repository: `tuhinbiswas404076-ai/EEG-LSTM-CNN-Learner-Classification`.
-4. Branch: `main`
-5. Main file path: `app.py`
-6. Click **"Deploy!"**.
+### 1-Click Deployment (Recommended)
+1. Click here: 👉 **[Deploy on Streamlit Community Cloud](https://share.streamlit.io/deploy?repository=tuhinbiswas404076-ai/EEG-LSTM-CNN-Learner-Classification&branch=main&mainModule=app.py)**
+2. Sign in with GitHub (**`tuhinbiswas404076-ai`**).
+3. The repository (`tuhinbiswas404076-ai/EEG-LSTM-CNN-Learner-Classification`), branch (`main`), and file (`app.py`) will already be filled in.
+4. Click **"Deploy!"**.
 
 Within 1–2 minutes, your web application will be live with a permanent public URL:
 $$\text{https://eeg-lstm-cnn-learner-classification.streamlit.app}$$
